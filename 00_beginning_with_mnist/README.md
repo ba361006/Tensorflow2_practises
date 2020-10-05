@@ -64,8 +64,6 @@ Epoch | Batch | Batch Size | Iteration
     num_param = neurons_in_flatten_layer * neurons_in_fully_connected + num_of_bias
     or
     num_param = (neurons_in_flatten_layer + 1) * neurons_in_fully_connected
-
-
     ```
     </center>
     
