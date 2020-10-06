@@ -1,7 +1,11 @@
-import  tensorflow as tf
-import os
-import numpy as np 
 from tensorflow.keras import datasets, layers, optimizers, Sequential, metrics
+import tensorflow as tf
+import numpy as np 
+import os
+
+# To ingore messages and make your terminal clear
+# ignore 0: INFO, 1: WARNING, 2:ERROR, 3:FETAL messages, it needs to be single quote
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 # load data
 (xs, ys),_ = datasets.mnist.load_data()
@@ -14,9 +18,8 @@ xs = tf.convert_to_tensor(xs, dtype=tf.float32) / 255.
 # input tensor into tf.data.Dataset
 db = tf.data.Dataset.from_tensor_slices((xs,ys))
 
-# for further information in this step, check remark.py 
+# for further information in this step, check README.md
 db = db.batch(32).repeat(10)
-
 
 # build a network
 network = Sequential([layers.Dense(256, activation='relu'),
@@ -39,6 +42,8 @@ acc_meter = metrics.Accuracy()
 for step, (x,y) in enumerate(db):
     # shape of x = (32,28,28), due to db.batch(32)
     # shape of y = (32,)
+
+    # for further information about tf.GradientTape() in this step, check README.md
     with tf.GradientTape() as tape:
         # [b, 28, 28] -> [b, 784]
         x = tf.reshape(x, (-1, 28*28))
