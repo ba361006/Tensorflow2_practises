@@ -38,12 +38,12 @@ optimizer = optimizers.SGD(lr=0.01)
 # compute accuracy
 acc_meter = metrics.Accuracy()
 
-
+# this would extract the data batch by batch
 for step, (x,y) in enumerate(db):
     # shape of x = (32,28,28), due to db.batch(32)
     # shape of y = (32,)
 
-    # for further information about tf.GradientTape() in this step, check README.md
+    # for further information with respect to tf.GradientTape(), check README.md
     with tf.GradientTape() as tape:
         # [b, 28, 28] -> [b, 784]
         x = tf.reshape(x, (-1, 28*28))

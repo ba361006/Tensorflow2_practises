@@ -73,7 +73,7 @@ Epoch | Batch | Batch Size | Iteration
 
 - tf.GradientTape():
 
-    Trainable variables (created by tf.Variable or tf.compat.v1.get_variable, where trainable=True is default in both cases) are automatically watched. Tensors can be manually watched by invoking the watch method on this context manager.
+    Trainable variables (created by tf.Variable or tf.compat.v1.get_variable, where trainable=True is default in both cases) are automatically watched within the scope. Tensors can be manually watched by invoking the watch method on this context manager.
 
     > for further information, check the official website [tf.GradientTape](https://www.tensorflow.org/api_docs/python/tf/GradientTape)
 
@@ -85,12 +85,12 @@ Epoch | Batch | Batch Size | Iteration
 
     x = tf.constant(3, dtype=tf.float32)
 
-    # with GradientTape()
     with tf.GradientTape() as tape:
+        # according to the note above, tensors need to be manually watched
         tape.watch(x)
         y1 = x*x
 
-    # Differentiate with respect to x
+    # mathematical expression
     # let y = x^2 -> f'(x) = dy/dx = 2x -> f'(3) = 6
     dy_dx = tape.gradient(y1, x)
     print("dy_dx: ", dy_dx)

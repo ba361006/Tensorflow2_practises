@@ -12,14 +12,10 @@ class Regressor(keras.layers.Layer):
         # here must specify shape instead of tensor !
         # name here is meanless !
         # [dim_in, dim_out]
-        self.w = self.add_variable('meanless_name', [13, 1])
+        self.w = self.add_weight('meanless_name', [13, 1])
 
         # [dim_out]
-        self.b = self.add_variable('meanless_name', [1])
-
-        print(self.w.shape, self.b.shape)
-        print("type(self.w): {}, tf.is_tensor: {}, self.w.name: {}".format(type(self.w), tf.is_tensor(self.w), self.w.name))
-        print("type(self.b): {}, tf.is_tensor: {}, self.b.name: {}".format(type(self.b), tf.is_tensor(self.b), self.b.name))
+        self.b = self.add_weight('meanless_name', [1])
 
     # the function call is from the parent class -> keras.layers.Layer
     # for further information, see line 152~154 in the defination of keras.layers.Layer
@@ -41,7 +37,6 @@ def main():
     # raise AssertionError if tf version isn't 2.
     assert tf.__version__.startswith('2.')
 
-
     # reading data
     # x_train.shape, y_train.shape, x_val.shape, y_val.shape 
     # (404, 13),     (404,)       , (102, 13)  , (102,)
@@ -51,11 +46,11 @@ def main():
     db_val = tf.data.Dataset.from_tensor_slices((x_val, y_val)).batch(102)
 
     model = Regressor()
-    loss_function = keras.losses.MeanSquaredError()
+    MSE = keras.losses.MeanSquaredError()
     optimizer = keras.optimizers.Adam(learning_rate=1e-2)
 
     for epoch in range(200):
-
+        
         for step, (x, y) in enumerate(db_train):
             # x.shape: (64,13); y.shape: (,64)
             with tf.GradientTape() as tape:
@@ -65,9 +60,8 @@ def main():
                 # [b]
                 # flatten output
                 flatten = tf.squeeze(output, axis=1)
-
                 # [b] vs [b]
-                loss = loss_function(y, flatten)
+                loss = MSE(y, flatten)
 
             grads = tape.gradient(loss, model.trainable_variables)
             optimizer.apply_gradients(zip(grads, model.trainable_variables))
@@ -80,13 +74,18 @@ def main():
             for x, y in db_val:
                 # [b, 1]
                 output = model(x)
+
                 # [b]
                 output = tf.squeeze(output, axis=1)
+
                 # [b] vs [b]
-                loss = loss_function(y, output)
+                loss = MSE(y, output)
 
-                # print(epoch, 'val loss:', loss.numpy())
 
+                print("------------------------------------------------------------")
+                print("Epoch: {}, loss: {}".format(epoch, loss.numpy()))
+                print("weight: {}, bias: {}".format(model.w, model.b))
+                print("------------------------------------------------------------")
 
 
 
