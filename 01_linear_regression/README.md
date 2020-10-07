@@ -12,6 +12,8 @@
         ![image of Boston_housing](http://wordpress.wbur.org/wp-content/uploads/2013/09/housing-photo1-1000x664.jpg)
         Credits: http://www.wbur.org/radioboston/2013/09/18/bostons-housing-challenge
 
+        <div align="center">
+
         | Feature | Description |
         | ------- | ----------- |
         | crim    | per capita crime rate by town.  |
@@ -28,7 +30,8 @@
         | black   | 1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town. |
         | lstat   | lower status of the population (percent). |
         | medv    | median value of owner-occupied homes in \$1000s. |
-    
+        
+        </div>
     
 
 - practise.py
