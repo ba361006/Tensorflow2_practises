@@ -3,7 +3,7 @@
 - main.py
     > revised from [04-Linear-Regression](https://github.com/dragen1860/TensorFlow-2.x-Tutorials/tree/master/04-Linear-Regression)
 
-    In this example, tf.keras.layers.Layer is used to build a linear regression network for Boston_housing price prediction 
+    This programme is to build a linear regression network for Boston_housing price prediction
 
     - Boston Housing Dataset
 
@@ -33,5 +33,27 @@
 
     
 
-- practise
+- practise.py
+    
+    This programme builds a linear regression model for equation prediction
+
+    Equation: 
+
+    <center>y_data = x_data * 2.7 + 3.5 </center>
+
+    <br>
+    You can also change the batch size, learning_rate and optimizer to see how them affacts the system by the following lines
+
+    
+    ```
+    # change the batch size
+    dataset = tf.data.Dataset.from_tensor_slices((x_data,y_data)).batch(10)
+    ```
+
+    ```
+    # For changing the optimizer, you might need to adjest the number of epoch
+    optimizer = keras.optimizers.SGD(learning_rate=1e-2)
+    ```
+    
+
         

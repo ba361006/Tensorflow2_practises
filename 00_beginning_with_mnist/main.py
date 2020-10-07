@@ -26,8 +26,8 @@ network = Sequential([layers.Dense(256, activation='relu'),
                       layers.Dense(256, activation='relu'),
                       layers.Dense(256, activation='relu'),
                       layers.Dense(10)])
-
 network.build(input_shape=(None, 28*28))
+
 
 # show the information about params
 network.summary()
