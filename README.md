@@ -1,5 +1,5 @@
 # Tensorflow2_Practises
-> This repo is based on [TensorFlow-2.x-Tutorials](https://github.com/dragen1860/TensorFlow-2.x-Tutorials), but some comments are added to make the programs easier to understand.
+> This repo is based on [TensorFlow-2.x-Tutorials](https://github.com/dragen1860/TensorFlow-2.x-Tutorials), but some comments are added to make the programmes easier to understand.
 
 - Here are some great Tensorflow_2 learning resources:
     - English resources:
