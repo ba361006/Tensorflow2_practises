@@ -39,14 +39,15 @@
 
     Equation: 
 
-    <center>y_data = x_data * 2.7 + 3.5 </center>
+    > <p style="text-align: center;"> y_data = x_data * 2.7 + 3.5 </p>
+
 
     <br>
     You can also change the batch size, learning_rate and optimizer to see how them affacts the system by the following lines
 
     
-    ```
-    # change the batch size
+    
+    ```# change the batch size
     dataset = tf.data.Dataset.from_tensor_slices((x_data,y_data)).batch(10)
     ```
 
