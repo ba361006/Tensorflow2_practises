@@ -39,7 +39,7 @@
 
     Equation: 
 
-    > <p style="text-align: center;"> y_data = x_data * 2.7 + 3.5 </p>
+    <center>y_data = x_data * 2.7 + 3.5</center>
 
 
     <br>
