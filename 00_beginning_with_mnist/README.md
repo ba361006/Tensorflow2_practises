@@ -33,7 +33,7 @@ Epoch | Batch | Batch Size | Iteration
 
 ### Demonstarion
 - tf.data.Dataset: 
-    ```
+    ```python
     from tensorflow.keras import datasets, layers, optimizers, Sequential, metrics
     import tensorflow as tf
     import numpy as np 
@@ -77,7 +77,7 @@ Epoch | Batch | Batch Size | Iteration
 
     > for further information, check the official website [tf.GradientTape](https://www.tensorflow.org/api_docs/python/tf/GradientTape)
 
-    ```
+    ```python
     import tensorflow as tf 
     import os
 
@@ -103,7 +103,7 @@ Epoch | Batch | Batch Size | Iteration
 
     <center>
 
-    ```
+    ```python
     num_param = output_channel_number * (input_channel_number * kernel_height * kernel_width + 1)
     ```
     </center>
@@ -128,7 +128,7 @@ Epoch | Batch | Batch Size | Iteration
 - fully connected layer:
     <center>
 
-    ```
+    ```python
     num_param = neurons_in_flatten_layer * neurons_in_fully_connected + num_of_bias
                                     or
     num_param = (neurons_in_flatten_layer + 1) * neurons_in_fully_connected

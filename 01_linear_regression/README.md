@@ -39,7 +39,7 @@
 
     Equation: 
 
-    <center>y_data = x_data * 2.7 + 3.5</center>
+    <div align="center">y_data = x_data * 2.7 + 3.5</div>
 
 
     <br>
@@ -47,11 +47,12 @@
 
     
     
-    ```# change the batch size
+    ```python
+    # change the batch size
     dataset = tf.data.Dataset.from_tensor_slices((x_data,y_data)).batch(10)
     ```
 
-    ```
+    ```python
     # For changing the optimizer, you might need to adjest the number of epoch
     optimizer = keras.optimizers.SGD(learning_rate=1e-2)
     ```
