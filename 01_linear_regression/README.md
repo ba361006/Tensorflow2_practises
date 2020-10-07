@@ -31,8 +31,6 @@
     
     
 
-    
-
 - practise.py
     
     This programme builds a linear regression model for equation prediction
@@ -40,7 +38,6 @@
     Equation: 
 
     <div align="center">y_data = x_data * 2.7 + 3.5</div>
-
 
     <br>
     You can also change the batch size, learning_rate and optimizer to see how them affacts the system by the following lines

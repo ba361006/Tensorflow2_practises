@@ -15,13 +15,13 @@ How many batches that is needed to complete an epoch
 - Example :<br> 
 There is a dataset of 2000 training samples. Divide 2000 samples into batches of 500, so 4 samples are needed to complete an epoch.
 
-<center>
+<div align="center">
 
 Epoch | Batch | Batch Size | Iteration
 :---: | :---: | :---: | :---:
 1 | 4 | 500 | 4
 
-</center>
+</div>
 
 
 <br>
@@ -101,12 +101,12 @@ Epoch | Batch | Batch Size | Iteration
 ### Counting the number of parameter
 - Convolutional Neural Network:<br>
 
-    <center>
+   <div align="center">
 
     ```python
     num_param = output_channel_number * (input_channel_number * kernel_height * kernel_width + 1)
     ```
-    </center>
+    </div>
 
     Note: The number 1 denotes the bias that is associated with each filter that we’re learning.
 
@@ -115,36 +115,36 @@ Epoch | Batch | Batch Size | Iteration
     - Eample :<br>
 
         There is a Conv2D layer <br>
-        <center>
+        <div align="center">
         
         | Input shape | Kernel size | output shape |
         | :---: | :---: | :---: |
         | (3,3) | (28,28,1) | (26,26,32) |
-        </center>
+        </div>
 
         its number of trainable parameters would be <br>
-        <center> 320 = 32 * (1 * 3 * 3 + 1) </center>
+        <div align="center"> 320 = 32 * (1 * 3 * 3 + 1) </div>
     
 - fully connected layer:
-    <center>
+    <div align="center">
 
     ```python
     num_param = neurons_in_flatten_layer * neurons_in_fully_connected + num_of_bias
                                     or
     num_param = (neurons_in_flatten_layer + 1) * neurons_in_fully_connected
     ```
-    </center>
+    </div>
     
     Note: Number of bias would equal to number of neurons_in_fully_connected.
 
     - Example :
-        <center>
-        
+        <div align="center">
+
         | neurons_in_flatten_layer | neurons_in_fully_connected | num_of_bias |
         | :---: | :---: | :---: |
         | 576 | 64 | 64 |
-        </center>
+        </div>
 
         and its number of trainable parameters would be <br>
-        <center> 36928 = 576 * 64 + 64 </center>
+        <div align="center"> 36928 = 576 * 64 + 64 </div>
 
