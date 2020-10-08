@@ -46,7 +46,6 @@
     You can also change the batch size, learning_rate and optimizer to see how them affacts the system by the following lines
 
     
-    
     ```python
     # change the batch size
     dataset = tf.data.Dataset.from_tensor_slices((x_data,y_data)).batch(10)
