@@ -56,7 +56,6 @@ class VGG16(models.Model):
 
         model.add(layers.MaxPooling2D(pool_size=(2, 2)))
 
-
         model.add(layers.Conv2D(512, (3, 3), padding='same',kernel_regularizer=regularizers.l2(weight_decay)))
         model.add(layers.Activation('relu'))
         model.add(layers.BatchNormalization())

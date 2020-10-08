@@ -4,6 +4,7 @@
 - Here are some great Tensorflow_2 learning resources:
     - English resources:
         - [TensorFlow-2.x-Tutorials](https://github.com/dragen1860/TensorFlow-2.x-Tutorials)
+        - [What is Logit ?](https://zhuanlan.zhihu.com/p/51431626)
     
     - Mandarin resources:
         - [Tensorflow vs PyTorch 系列](https://ithelp.ithome.com.tw/users/20112126/ironman/2841?page=1)

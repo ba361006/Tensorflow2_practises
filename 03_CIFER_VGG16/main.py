@@ -6,12 +6,8 @@ import numpy as np
 import os
 import argparse
 
-
-
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # or any {'0', '1', '2'}
 argparser = argparse.ArgumentParser()
-
-
 
 argparser.add_argument('--train_dir', type=str, default='/tmp/cifar10_train',
                            help="Directory where to write event logs and checkpoint.")
@@ -21,7 +17,6 @@ argparser.add_argument('--log_device_placement', action='store_true',
                             help="Whether to log device placement.")
 argparser.add_argument('--log_frequency', type=int, default=10,
                             help="How often to log results to the console.")
-
 
 def normalize(X_train, X_test):
     # this function normalize inputs for zero mean and unit variance
@@ -39,12 +34,9 @@ def normalize(X_train, X_test):
     return X_train, X_test
 
 def prepare_cifar(x, y):
-
     x = tf.cast(x, tf.float32)
     y = tf.cast(y, tf.int32)
     return x, y
-
-
 
 def compute_loss(logits, labels):
   return tf.reduce_mean(
@@ -52,7 +44,6 @@ def compute_loss(logits, labels):
           logits=logits, labels=labels))
 
 def main():
-
     tf.random.set_seed(22)
 
     print('loading data...')
@@ -75,7 +66,6 @@ def main():
     metric = keras.metrics.CategoricalAccuracy()
 
     optimizer = optimizers.Adam(learning_rate=0.0001)
-
 
     for epoch in range(250):
 
@@ -104,9 +94,7 @@ def main():
                 print(epoch, step, 'loss:', float(loss), 'acc:', metric.result().numpy())
                 metric.reset_states()
 
-
         if epoch % 1 == 0:
-
             metric = keras.metrics.CategoricalAccuracy()
             for x, y in test_loader:
                 # [b, 1] => [b]
