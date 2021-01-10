@@ -68,7 +68,6 @@ def main():
     optimizer = optimizers.Adam(learning_rate=0.0001)
 
     for epoch in range(250):
-
         for step, (x, y) in enumerate(train_loader):
             # [b, 1] => [b]
             y = tf.squeeze(y, axis=1)

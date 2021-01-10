@@ -27,7 +27,7 @@ Epoch | Batch | Batch Size | Iteration
 <br>
 
 # Notes
-> For further information, [check here](htt:ps//towardsdatascience.com/how-to-calculate-the-number-of-parameters-in-keras-models-710683dae0ca).
+> For further information, [check here](https://towardsdatascience.com/how-to-calculate-the-number-of-parameters-in-keras-models-710683dae0ca).
 
 ### Demonstarion
 - tf.data.Dataset: 

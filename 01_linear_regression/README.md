@@ -9,7 +9,8 @@
 
         The medv variable is the target variable.
 
-        ![image of Boston_housing](http://wordpress.wbur.org/wp-content/uploads/2013/09/housing-photo1-1000x664.jpg)
+        ![image of Boston_housing](./image/housing.jpg)
+        
         Credits: http://www.wbur.org/radioboston/2013/09/18/bostons-housing-challenge
 
         <div align="center">
